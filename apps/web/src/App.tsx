@@ -39,7 +39,7 @@ export default function App() {
   if (!entered) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center px-4 text-slate-100">
-        <div className="w-full max-w-md rounded-2xl border border-white/[0.06] bg-slate-900/60 p-8 shadow-2xl shadow-black/50 backdrop-blur-sm">
+        <div className="w-full max-w-md rounded-2xl border border-white/[0.06] bg-slate-900/10 p-8 shadow-3xl shadow-black/50 backdrop-blur-sm">
           <h1 className="text-2xl font-bold tracking-tight">Virtual Cosmos</h1>
           <p className="mt-2 text-sm leading-relaxed text-slate-400">
             Enter a shared 2D world. Move with WASD / arrow keys. Chat when your
@@ -55,7 +55,7 @@ export default function App() {
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g. Amrit"
             maxLength={24}
-            className="mt-2 w-full rounded-lg border border-slate-600/60 bg-slate-950/80 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+            className="mt-2 w-full rounded-lg border border-slate-600/60 bg-slate-950/80 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-600 focus:border-slate-700 focus:outline-none focus:ring-1 focus:ring-slate-700"
           />
 
           <p className="mt-6 text-[11px] font-semibold uppercase tracking-widest text-slate-500">
@@ -80,7 +80,7 @@ export default function App() {
           <button
             type="button"
             onClick={handleEnter}
-            className="mt-8 w-full rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-900/30 transition hover:from-sky-500 hover:to-indigo-500"
+            className="mt-8 w-full rounded-xl bg-gradient-to-r from-slate-950 to-slate-900 py-3 text-sm font-semibold text-white shadow-sm shadow-sky-900/30 transition hover:from-slate-950 hover:to-slate-800"
           >
             Enter Cosmos
           </button>
@@ -102,9 +102,9 @@ export default function App() {
       )}
 
       <header className="mb-5 flex flex-wrap items-center gap-3">
-        <h1 className="mr-2 text-lg font-bold tracking-tight">Virtual Cosmos</h1>
+        <h1 className="mr-2 text-2xl font-bold -tracking-wide">Virtual Cosmos</h1>
 
-        <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold ${
+        <span className={`inline-flex items-center gap-2 rounded-md px-3 py-0.5 text-[11px] font-semibold ${
           live
             ? "bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/30"
             : "bg-amber-500/10 text-amber-200 ring-1 ring-amber-500/30"
@@ -113,7 +113,7 @@ export default function App() {
           {live ? "Live" : "Connecting…"}
         </span>
 
-        <span className="rounded-full bg-white/[0.05] px-3 py-1 text-[11px] font-medium text-slate-300 ring-1 ring-white/[0.06]">
+        <span className="rounded-md bg-white/[0.05] px-3 py-1 text-[11px] font-medium text-slate-300 ring-1 ring-white/[0.06]">
           Players: <strong className="text-white">{players.length}</strong>
         </span>
 
@@ -124,7 +124,7 @@ export default function App() {
         )}
       </header>
 
-      <div className="flex flex-col gap-5 lg:flex-row lg:items-start">
+      <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex-shrink-0">
           <CosmosCanvas
             myId={uid}

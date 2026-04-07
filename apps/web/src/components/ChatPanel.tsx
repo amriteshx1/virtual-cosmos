@@ -25,7 +25,7 @@ export function ChatPanel({ visible, peerNames, messages, myId, onSend }: Props)
   };
 
   return (
-    <div className="flex h-full min-h-[420px] flex-col rounded-xl border border-white/[0.06] bg-slate-900/50 shadow-inner shadow-black/20 backdrop-blur-sm">
+    <div className="flex h-full min-h-[420px] flex-col rounded-xl border border-white/[0.06] bg-slate-900/10 shadow-inner shadow-black/20 backdrop-blur-sm">
       <div className="border-b border-white/[0.06] px-4 py-3.5">
         <h2 className="text-sm font-semibold text-slate-100">Proximity Chat</h2>
         {visible ? (
@@ -42,7 +42,7 @@ export function ChatPanel({ visible, peerNames, messages, myId, onSend }: Props)
       {!visible ? (
         <div className="flex flex-1 flex-col items-center justify-center gap-3 px-6 text-center">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800/60 text-2xl">
-            💬
+            ✉️
           </div>
           <p className="text-sm text-slate-500">
             No one is within your proximity range yet.
